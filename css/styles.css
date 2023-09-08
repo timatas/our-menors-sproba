@@ -69,18 +69,35 @@ p {
   margin-bottom: 8px;
 }
 .container {
-  width: 1158px;
-  margin: 0 auto;
-  padding: 0 15px;
+  max-width: 375px;
+  margin: 80px auto;
+  padding: 0 20px;
 }
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 100px auto;
+    padding: 0 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    margin: 150 auto;
+    padding: 0 100px;
+  }
+}
+
 .nav {
   display: flex;
   align-items: center;
 }
 img {
-  display: block;
+  border-radius: 200px;
+  background-color: #e0e0e0;
+  /* display: block;
   max-width: 100%;
-  height: auto;
+  height: auto; */
 }
 /* ======== Header styles ======================= */
 /* Logo */
@@ -248,43 +265,95 @@ img {
 }
 
 /* ================================= */
-/* ======team-section=============== */
-.team-section {
-  background-color: var(--cloud);
-  padding: 120px 0;
+/* ======mentors-section=============== */
+.mentors-section {
+  background-color: black;
 }
-.team-section-title {
-  color: var(--grey);
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.11;
-  letter-spacing: 0.02em;
+
+.mentors-section-title {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -1.12px;
   text-transform: capitalize;
-  text-align: center;
-  min-width: 162px;
+  text-align: left;
+
+  min-width: 266px;
   margin: 0 auto;
-  margin-bottom: 72px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  padding-left: 20px;
 }
-.team-section-list {
-  --items: 4;
-  --indent: 24px;
-  gap: 24px;
+
+.mentors-span {
+  color: #bea69e;
 }
-.employee-info {
+
+/*@media only screen and (min-width: 768px) {
+  .team-section {
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding-left: 32px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .team-section {
+    margin: 0 auto;
+    margin-top: 150px;
+    padding-left: 100px;
+  }
+} */
+
+.mentors-section-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 40px 93px;
+  align-items: center;
+  justify-content: center;
+  max-width: 180px;
+  margin: 0 auto;
+}
+.mentors-section-item {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .mentors-section-title {
+    font-size: 48px;
+    line-height: 1.13;
+    letter-spacing: -1.92px;
+    padding-left: 32px;
+  }
+  .mentors-section-list {
+    max-width: 474px;
+  }
+  .mentors-section-item {
+    width: calc((100% - 100px) / 2);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .mentors-section-title {
+    padding-left: 100px;
+  }
+  .mentors-section-list {
+    max-width: 1280px;
+  }
+  .mentors-section-item {
+    width: calc((100% - 339px) / 4);
+  }
+}
+
+.mentor-info {
   padding: 32px 0;
 }
 
-.team-section-item {
-  background-color: var(--white);
-  border: 1px solid var(--cornflower);
-  border-top: none;
-  border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-  width: calc((100% - 72px) / 4);
-}
-.employee-title {
+.mentor-name {
   color: var(--grey);
   background-color: var(--white);
   font-size: 20px;
@@ -294,7 +363,7 @@ img {
   margin-bottom: 8px;
   text-align: center;
 }
-.employee-job {
+.mentor-experience {
   background-color: var(--white);
   font-weight: 400;
   color: var(--slate);
